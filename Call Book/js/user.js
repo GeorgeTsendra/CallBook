@@ -30,10 +30,10 @@ class User{
   }
 
 
-  addUserPageOutput () {
+  addUserPageOutput (value) {
     let main = document.getElementById('app')
 
-    main.innerHTML += `<header class="header">
+    main.innerHTML = `<header class="header">
   		<div class="container top-radius">
   			<div class="user-top-line">
   				<a href="index.html">
@@ -68,8 +68,9 @@ class User{
 
   			</div>
   		</main>`
+      // console.log(this);
     }
 }
 
-let myUser = new User()
-myUser.addUserPageOutput()
+// let myUser = new User()
+// myUser.addUserPageOutput()

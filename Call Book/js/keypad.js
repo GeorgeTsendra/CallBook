@@ -22,7 +22,7 @@ class Keypad {
 
   addUserPageOutput() {
     let main = document.getElementById('app')
-
+    // console.log(this);
     main.innerHTML = `<header class="header">
   		<div class="container top-radius">
   			<h2>Keypad</h2>
@@ -33,7 +33,7 @@ class Keypad {
   			<div class="number">
   				<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
   				<span id="numberInput" class ="numbers"></span>
-  				<span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true" onclick="myKeyad.glyphicon()"></span>
+  				<span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
   			</div>
         <div class="keypad-holder">
 
@@ -61,7 +61,7 @@ class Keypad {
       let keypadsButtons = document.querySelectorAll("button.numbersInKeypad");
       [...keypadsButtons].forEach(keypadButton => {
       keypadButton.addEventListener("click", function(event) {
-if (placeNumbers.innerHTML.length <=15) {
+        if (placeNumbers.innerHTML.length <=16) {
 
 
     if (keypadButton.innerHTML == "#" && placeNumbers.innerHTML == "" ||
@@ -87,8 +87,10 @@ if (placeNumbers.innerHTML.length <=15) {
   })
     })
 
+
+
     window.addEventListener("keydown", e => {
-      
+
 
       if (e.keyCode <= 57 && e.keyCode >= 48 && placeNumbers.innerHTML.length <= 15) {
 
@@ -117,9 +119,10 @@ if (placeNumbers.innerHTML.length <=15) {
     })
 
 
-
+    let removeWords = document.querySelector(".glyphicon-circle-arrow-left")
+    removeWords.addEventListener("click", this.glyphicon)
   }
 }
 
-let myKeyad = new Keypad();
-myKeyad.addUserPageOutput()
+// let myKeyad = new Keypad();
+// myKeyad.addUserPageOutput()

@@ -14,39 +14,34 @@ class Footer{
 
   }
 
-  footerOutput (){
+  footerOutput(){
     let footer = document.getElementById('footer')
    footer.innerHTML = `
    <footer class="footer">
      <div class="container bottom-radius">
        <nav class="main-nav">
-         <a href="index.html" class="tab active">
+         <a href="#" class="tab" id="context">
            ${this.createNav("glyphicon glyphicon-search", ``,`true`)}
-           ${this.createNav("tab-text", `Context`)}
+           ${this.createNav("tab-text", `Contacts`)}
          </a>
-         <a href="keypad.html" class="tab">
 
-             ${this.createNav("glyphicon glyphicon-th", ``,`true`)}
-             ${this.createNav("tab-text", `Keypad`)}
-         </a>
-         <a href="edit-contact.html" class="tab">
-
-           ${this.createNav("glyphicon glyphicon-pencil", ``,`true`)}
-           ${this.createNav("tab-text", `Edit contact`)}
-         </a>
-         <a href="user.html" class="tab">
+         <a href="#" class="tab" id="user">
 
            ${this.createNav("glyphicon glyphicon-user", ``,`true`)}
            ${this.createNav("tab-text", `User`)}
          </a>
-         <a href="add-user.html" class="tab">
+         <a href="#" class="tab" id="keypad">
+
+         ${this.createNav("glyphicon glyphicon-th", ``,`true`)}
+         ${this.createNav("tab-text", `Keypad`)}
+         </a>
+         <a href="#" class="tab" id="addUser">
            ${this.createNav("glyphicon glyphicon-plus", ``,`true`)}
            ${this.createNav("tab-text", `Add user`)}
          </a>
        </nav>
      </div>
    </footer>`
+
  }
 }
-let myFooter = new Footer()
-myFooter.footerOutput()

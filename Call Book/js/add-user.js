@@ -1,72 +1,14 @@
-class addUser{
+class AddUser{
 constructor(options){
-
+  this.context
+  this.app
   }
 
-
-  contentEditable(){
-
-    let name = document.getElementById("Name")
-    let surname = document.getElementById("Surname")
-
-    let doneBtn = document.querySelector('.done-btn')
-    let phone = document.querySelectorAll('.edit-info > .edit-field > input')[0]
-    let email = document.querySelectorAll('.edit-info > .edit-field > input')[2]
-
-    const url = "http://easycode-js.herokuapp.com/GeogreTsendra13"
-    const serverAddUser = () =>{
-      let user = {
-        fullName: `${name.value} ${surname.value} `,
-        email: email.value,
-        phone: phone.value
-      };
-      const xhr = new XMLHttpRequest()
-      xhr.onreadystatechange = () =>{
-      };
-      xhr.open("POST", url + '/users', false);
-      xhr.setRequestHeader("Content-type","application/json")
-      xhr.send(JSON.stringify(user))
-      xhr.timeout = 30000;
-      xhr.ontimeout = function() {
-        alert("Hi, you lose")
-      }
-    }
-
-    doneBtn.addEventListener("click", e=>{
-      if (name.value == " "
-      || surname.value == " "
-      || phone.value == " "
-      || email.value == " "
-      || typeof phone.value != "number"
-      || typeof name.value != "string"
-      || typeof surname.value != "string"
-      ){
-          alert("Некорректно заполненая форма")
-      }else {
-          serverAddUser()
-
-      }
-    })
-
-    window.addEventListener("keydown", e=>{
-      if (e.keyCode == 13 ) {
-        if (name.value == " "
-        || surname.value == " "
-        || phone.value == " "
-        || email.value == " "
-        || typeof phone.value != "number"
-        || typeof name.value != "string"
-        || typeof surname.value != "string"
-        ){
-            alert("Некорректно заполненая форма")
-        }else {
-            serverAddUser()
-
-        }
-      }
-    })
-
+  MaximumCallStackSizeExceededDesidion(){
+    this.context = new Context()
+    this.app = new App()
   }
+
 
 
 
@@ -104,10 +46,10 @@ constructor(options){
     let main = document.getElementById('app')
 
 
-    main.innerHTML += `<header class="header">
+    main.innerHTML = `<header class="header">
   		<div class="container top-radius">
   			<nav class="user-top-line">
-  				<a href="user.html">Cansel</a>
+  				<a href="#" id="cansel">Cansel</a>
   				<button class = "done-btn">Done</button>
   			</nav>
   		</div>
@@ -127,8 +69,8 @@ constructor(options){
   		</main>`
       let deleteBtton = document.querySelector(".delete-contact")
       let doneBtn = document.querySelector('.done-btn')
-    
-      this.contentEditable();
+
+      // this.contentEditable();
       deleteBtton.addEventListener('click', e=>{
 
         let inputs = document.querySelectorAll(' .edit-field > input')
@@ -139,10 +81,17 @@ constructor(options){
 
       })
 
+      this.MaximumCallStackSizeExceededDesidion();
+      let canselButton = document.getElementById("cansel")
+      canselButton.addEventListener("click", (e) => {
+        this.app.appRender()
 
+      })
+
+      // console.log(this);
 
     }
   }
 
-let myAddUser = new addUser()
-myAddUser.addUserPageOutput()
+// let myAddUser = new addUser()
+// myAddUser.addUserPageOutput()
